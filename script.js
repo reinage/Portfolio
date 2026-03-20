@@ -71,7 +71,78 @@ const pages = document.querySelectorAll('.page');
 
 
 }
+/*flipbook
+*/
+document.addEventListener('DOMContentLoaded', (event) => {
+    let isDragging = false;
+    let startX;
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
 
+    document.getElementById('flipbook').addEventListener('mousedown', startDrag);
+    document.getElementById('flipbook').addEventListener('mousemove', onDrag);
+    document.getElementById('flipbook').addEventListener('mouseup', endDrag);
+    document.getElementById('flipbook').addEventListener('touchstart', startDrag);
+    document.getElementById('flipbook').addEventListener('touchmove', onDrag);
+    document.getElementById('flipbook').addEventListener('touchend', endDrag);
+    document.getElementById('flipbook').addEventListener('click', flipPage);
+
+    function startDrag(e) {
+        isDragging = true;
+        startX = e.pageX || e.touches[0].pageX;
+    }
+
+    function onDrag(e) {
+        if (!isDragging) return;
+        let x = e.pageX || e.touches[0].pageX;
+        let moveX = x - startX;
+        let currentTransform = `rotateY(${moveX / 5}deg)`;
+        if (moveX > 0 && currentPage > 0) {
+            pages[currentPage - 1].style.transform = currentTransform;
+        } else if (moveX < 0 && currentPage < pages.length) {
+            pages[currentPage].style.transform = currentTransform;
+        }
+    }
+
+    function endDrag(e) {
+        isDragging = false;
+        let x = e.pageX || e.changedTouches[0].pageX;
+        let moveX = x - startX;
+        if (moveX > 50 && currentPage > 0) {
+            flipToPreviousPage();
+        } else if (moveX < -50 && currentPage < pages.length) {
+            flipToNextPage();
+        } else {
+            pages[currentPage].style.transform = 'rotateY(0deg)';
+            if (currentPage > 0) pages[currentPage - 1].style.transform = 'rotateY(-180deg)';
+        }
+    }
+
+    function flipPage(e) {
+        if (isDragging) return;
+        if (e.pageX || e.clientX) {
+            let x = e.pageX || e.clientX;
+            if (x < window.innerWidth / 2 && currentPage > 0) {
+                flipToPreviousPage();
+            } else if (x > window.innerWidth / 2 && currentPage < pages.length) {
+                flipToNextPage();
+            }
+        }
+    }
+
+    function flipToPreviousPage() {
+        pages[currentPage].classList.remove('flipped');
+        currentPage--;
+        if (currentPage > 0) {
+            pages[currentPage - 1].style.transform = 'rotateY(-180deg)';
+        }
+    }
+
+    function flipToNextPage() {
+        pages[currentPage].classList.add('flipped');
+        currentPage++;
+    }
+});
 /*
      FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 12:10:12 Mar 20, 2026.
