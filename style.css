@@ -1,0 +1,220 @@
+/* CSS files add styling rules to your content */
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+  background-color: #000000;
+  overflow-x: auto;
+}
+body1 {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+  background-color: #000000;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+h1 {
+  font-style: bold;
+  font-family: "Open Sans", sans-serif;
+  color: #72ccc9;
+  font-size: 48;
+  font-weight: 1000;
+  padding-right: 16px;
+}
+.nav {
+  list-style-type: none;
+}
+ul {
+  padding: 0px;
+}
+.collapse {
+  padding-left: 12px;
+}
+.social {
+  white-space: nowrap;
+    float: left;
+}
+.scrolly {
+  overflow-y: auto;
+}
+img {
+  height: 100vh;
+}
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: black,90%;
+  background-opacity: 50%;
+  position: fixed;
+  height: 100%;
+  margin: 16px;
+  overflow: auto;
+}
+.aboutphoto{
+  margin: 0;
+  padding: 0;
+  max-width: 40vw;
+  right: -20px;
+  background-color: black,90%;
+  background-opacity: 50%;
+  position: fixed;
+  height: 100%;
+  margin: 16px;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: table;
+  color: white;
+  padding: 4px;
+  text-decoration: none;
+  transition: 0.6s ease-in-out;
+}
+/*Hide submenu */
+.nav li ul{
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 500ms, opacity 300ms;
+    -webkit-transition: position 500ms, max-height 500ms, opacity 500ms;
+}
+.nav li:hover ul{
+    max-height: 200px;
+    opacity: 1;
+    transition: max-height 0, opacity 300ms;
+    -webkit-transition: position 500ms, max-height 0, opacity 300ms;
+}
+
+.kofi-wiggle {
+  animation-name: kofi-wiggle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes kofi-wiggle{0%{transform:rotate(0) scale(1)}60%{transform:rotate(0) scale(1)}75%{transform:rotate(0) scale(1.12)}80%{transform:rotate(0) scale(1.1)}84%{transform:rotate(-10deg) scale(1.1)}88%{transform:rotate(10deg) scale(1.1)}92%{transform:rotate(-10deg) scale(1.1)}96%{transform:rotate(10deg) scale(1.1)}100%{transform:rotate(0) scale(1)}}"
+
+/* Active/current link */
+.sidebar a.active {
+  color: #72ccc9;
+}
+.sidebar a:hover.active {
+  color: #029cc5;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  color: gray;
+  transition: 0.3s;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 0px 0px;
+  height: 100%;
+  overflow-x: auto;
+}
+
+div.about {
+  margin-right: 40vw;
+}
+/*images with info*/
+
+.hideinfo {
+  opacity:0;
+  width: auto;
+  position:absolute;
+}
+
+.showinfo {
+  position:absolute;
+  opacity:1;
+  background-color: RGBA(63, 191, 157,0.8);
+  padding:40px;
+  border-radius:5px;
+  color: white;
+  transition: opacity 2s;
+  z-index:2;
+}
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  
+  div.content {
+    margin-left: 0;
+    overflow-y: auto;
+  }
+  
+  .kofi {
+    display: none;
+  }
+  
+  body {
+    overflow-y: auto;
+  }
+    body1 {
+    overflow-y: auto;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 300px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/*This is a comment. For more style ideas, check out: css.cool */
+/*flipbook*/
+
+#flipbook {
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+.page {
+    width: 800px;
+    height: 600px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure any overflow is hidden */
+}
+
+.page img {
+    max-width: 100%; /* Scale image width to fit the page */
+    max-height: 100%; /* Scale image height to fit the page */
+    object-fit: contain; /* Ensure the aspect ratio is maintained */
+}
+
+/*end flipbook*/
+/*
+     FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:10:12 Mar 20, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.89
+  load_resource: 91.445
+  PetaboxLoader3.resolve: 51.535
+  PetaboxLoader3.datanode: 20.307
+*/
