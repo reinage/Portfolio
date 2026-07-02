@@ -182,7 +182,7 @@ begin text adding arrows to flipbook*/
     height: 48px;
     border-radius: 50%;
 
-    opacity: 0;
+    opacity: 1;
     transition: opacity .3s;
 }
 
