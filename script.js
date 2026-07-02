@@ -143,6 +143,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
         currentPage++;
     }
 });
+
+/*test turn?*/
+	$(window).ready(function() {
+		$('#dtes').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#dtes').turn('previous');
+		else if (e.keyCode==39)
+			$('#dtes').turn('next');
+			
+	});
 /*
      FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 12:10:12 Mar 20, 2026.
