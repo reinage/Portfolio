@@ -120,7 +120,31 @@ frame:function(c){c=L(d,d,e,e,c);a.x=c.x;a.y=c.y;i._showFoldedPage.call(b,a)},co
 this.data().f;if(!a.disabled&&a.point){var b=h.Event("released");this.trigger(b,[a.point]);b.isDefaultPrevented()||i.hideFoldedPage.call(this,!0)}a.corner=null},disable:function(a){i.setData.call(this,{disabled:a});return this}},N=function(a,b,c){if(!c[0]||"object"==typeof c[0])return b.init.apply(a,c);if(b[c[0]]&&"_"!=c[0].toString().substr(0,1))return b[c[0]].apply(a,Array.prototype.slice.call(c,1));throw c[0]+" is an invalid value";};h.extend(h.fn,{flip:function(a,b){return N(this,i,arguments)},
 turn:function(a){return N(this,g,arguments)},transform:function(a,b){var c={};b&&(c[y+"transform-origin"]=b);c[y+"transform"]=a;return this.css(c)},animatef:function(a){var b=this.data();b.effect&&clearInterval(b.effect.handle);if(a){a.to.length||(a.to=[a.to]);a.from.length||(a.from=[a.from]);a.easing||(a.easing=function(a,b,c,d,e){return d*Math.sqrt(1-(b=b/e-1)*b)+c});var c,d=[],e=a.to.length,f=this,h=a.fps||30,i=-h,g=function(){var c,g=[];i=Math.min(a.duration,i+h);for(c=0;c<e;c++)g.push(a.easing(1,
 i,a.from[c],d[c],a.duration));a.frame(e==1?g[0]:g);if(i==a.duration){clearInterval(b.effect.handle);delete b.effect;f.data(b);a.complete&&a.complete()}};for(c=0;c<e;c++)d.push(a.to[c]-a.from[c]);b.effect=a;b.effect.handle=setInterval(g,h);this.data(b);g()}else delete b.effect}});h.isTouch=q})(jQuery); 
-/*
+
+
+	$(window).ready(function() {
+		$('#flipbook').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#flipbook').turn('previous');
+		else if (e.keyCode==39)
+			$('#flipbook').turn('next');
+			
+	});/*
      FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 12:10:12 Mar 20, 2026.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
