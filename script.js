@@ -96,7 +96,25 @@ const pages = document.querySelectorAll('.page');
 		else if (e.keyCode==39)
 			$('#flipbook').turn('next');
 			
-	});/*
+	});
+/*resize book to page size maybe?*/
+function resizeBook() {
+
+    let maxWidth = window.innerWidth * 0.9;
+    let maxHeight = window.innerHeight * 0.9;
+
+    // your book ratio (17:5.5)
+    let aspect = 11 / 8.5;
+
+    let width = maxWidth;
+    let height = width / aspect;
+
+    if (height > maxHeight) {
+        height = maxHeight;
+        width = height * aspect;
+    }
+
+    $("#flipbook").turn("size", width, height);/*
      FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 12:10:12 Mar 20, 2026.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
