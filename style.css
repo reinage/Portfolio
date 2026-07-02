@@ -35,7 +35,7 @@ ul {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: black,90%;
+  background-color:  rgba(0,0,0,0.9);
   background-opacity: 50%;
   position: fixed;
   height: 100%;
