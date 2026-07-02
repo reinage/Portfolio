@@ -165,7 +165,7 @@ div.about {
     float: none;
   }
 }
-
+body1 { font-family: "Open Sans", sans-serif; color: #FFFFFF; background-color: #000000; overflow-x: auto; white-space: nowrap; }
 /*This is a comment.
 begin text adding arrows to flipbook*/
 #book-container{
