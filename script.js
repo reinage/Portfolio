@@ -114,7 +114,67 @@ function resizeBook() {
         width = height * aspect;
     }
 
-    $("#flipbook").turn("size", width, height);/*
+    $("#flipbook").turn("size", width, height);
+	
+	
+	$(".book").on("click", function () {
+
+    let bookId = $(this).data("book");
+
+    // hide shelf
+    $("#shelf").fadeOut(200);
+
+    // show flipbook container
+    $("#book-container").removeClass("hidden").hide().fadeIn(300);
+
+    // OPTIONAL: you could swap content based on bookId here
+
+    // initialize turn.js if not already
+    $("#flipbook").turn({
+        width: 800,
+        height: 615,
+        autoCenter: true,
+        display: "double"
+    });
+$("#close-book").on("click", function () {
+
+    $("#book-container").fadeOut(200, function () {
+
+        $("#shelf").fadeIn(300);
+
+        // optional: destroy turn.js instance
+        // $("#flipbook").turn("destroy");
+
+    });
+});
+	$(".book").on("click", function () {
+
+    let clone = $(this).clone();
+
+    clone.css({
+        position: "fixed",
+        top: $(this).offset().top,
+        left: $(this).offset().left,
+        width: $(this).width(),
+        zIndex: 9999
+    });
+
+    $("body").append(clone);
+
+    clone.animate({
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%) scale(2)"
+    }, 300, function () {
+        clone.remove();
+
+        $("#shelf").fadeOut(150);
+        $("#book-container").fadeIn(200);
+    });
+
+});
+	
+	/*
      FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
      INTERNET ARCHIVE ON 12:10:12 Mar 20, 2026.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
