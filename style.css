@@ -205,9 +205,9 @@ begin text adding arrows to flipbook*/
 /*flipbook*/
 
 #flipbook {
-    width: 800px;
-    height: 600px;
     position: relative;
+    margin: auto;
+    transform-origin: center;
 }
 
 .page {
