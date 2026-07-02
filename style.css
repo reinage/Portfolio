@@ -229,6 +229,30 @@ begin text adding arrows to flipbook*/
     object-fit: contain; /* Ensure the aspect ratio is maintained */
 }
 
+#shelf {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+}
+
+.book {
+    width: 120px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.book img {
+    width: 100%;
+    display: block;
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
 /*end flipbook*/
 /*
      FILE ARCHIVED ON 11:20:55 Oct 08, 2024 AND RETRIEVED FROM THE
