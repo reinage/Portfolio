@@ -74,9 +74,18 @@ function openBook() {
         requestAnimationFrame(() => {
 
             setTimeout(() => {
+
                 initFlipbook();
+
+                // IMPORTANT: force layout before sizing
+                $("#flipbook").turn("size",
+                    window.innerWidth * 0.8,
+                    window.innerHeight * 0.8
+                );
+
                 resizeBook();
-            }, 50);
+
+            }, 80);
 
         });
 
