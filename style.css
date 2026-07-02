@@ -227,6 +227,7 @@ begin text adding arrows to flipbook*/
     display: flex;
     gap: 20px;
     padding: 40px;
+  flex-wrap: wrap;
 }
 
 .book {
