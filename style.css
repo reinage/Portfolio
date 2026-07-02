@@ -175,7 +175,33 @@ div.about {
   }
 }
 
-/*This is a comment. */
+/*This is a comment.
+begin text adding arrows to flipbook*/
+#book-container{
+    position: relative;
+    display: inline-block;
+}
+
+.nav-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.left{
+    left: 15px;
+}
+
+.right{
+    right: 15px;
+}
 /*flipbook*/
 
 #flipbook {
