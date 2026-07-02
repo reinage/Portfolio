@@ -69,13 +69,17 @@ function openBook() {
 
         $("#book-container")
             .removeClass("hidden")
-            .hide()
-            .fadeIn(300, function () {
+            .css("display", "block");
 
+        requestAnimationFrame(() => {
+
+            setTimeout(() => {
                 initFlipbook();
                 resizeBook();
+            }, 50);
 
-            });
+        });
+
     });
 }
 
