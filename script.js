@@ -1,14 +1,6 @@
-// prints "hi" in the browser's dev tools console
+// prints "hi" in dev tools
 console.log("hi");
 
-function myFunction() {
-   var element = document.getElementById("toggleinfo");
-   element.classList.toggle("showinfo");
-}
-
-// ------------------------------
-// BOOK SYSTEM VARIABLES
-// ------------------------------
 let isBookOpen = false;
 
 // ------------------------------
@@ -16,32 +8,31 @@ let isBookOpen = false;
 // ------------------------------
 function initFlipbook() {
 
-    if ($("#flipbook").data("turn")) return; 
-    // prevents double initialization
+    let $book = $("#flipbook");
 
-    $("#flipbook").turn({
-        display: 'double',
+    if ($book.data("turn")) return;
+
+    $book.turn({
+        display: "double",
         acceleration: true,
         gradients: !$.isTouch,
         elevation: 50,
-        autoCenter: true,
-        when: {
-            turned: function(e, page) {
-                // console.log('Current view: ', $(this).turn('view'));
-            }
-        }
+        autoCenter: true
     });
 }
 
 // ------------------------------
-// RESIZE BOOK TO WINDOW SIZE
+// RESIZE BOOK
 // ------------------------------
 function resizeBook() {
+
+    let $book = $("#flipbook");
+
+    if (!$book.data("turn")) return;
 
     let maxWidth = window.innerWidth * 0.9;
     let maxHeight = window.innerHeight * 0.9;
 
-    // correct open-book ratio (11 x 8.5)
     let aspect = 11 / 8.5;
 
     let width = maxWidth;
@@ -52,13 +43,11 @@ function resizeBook() {
         width = height * aspect;
     }
 
-    if ($("#flipbook").data("turn")) {
-        $("#flipbook").turn("size", width, height);
-    }
+    $book.turn("size", width, height);
 }
 
 // ------------------------------
-// OPEN BOOK FROM SHELF
+// OPEN BOOK
 // ------------------------------
 function openBook() {
 
@@ -71,21 +60,22 @@ function openBook() {
             .removeClass("hidden")
             .css("display", "block");
 
+        // IMPORTANT: prevent turn.js measuring hidden layout
+        $("#flipbook").css("visibility", "hidden");
+
         requestAnimationFrame(() => {
 
             setTimeout(() => {
 
                 initFlipbook();
 
-                // IMPORTANT: force layout before sizing
-                $("#flipbook").turn("size",
-                    window.innerWidth * 0.8,
-                    window.innerHeight * 0.8
-                );
+                // force layout stabilization before showing
+                setTimeout(() => {
+                    $("#flipbook").css("visibility", "visible");
+                    resizeBook();
+                }, 80);
 
-                resizeBook();
-
-            }, 80);
+            }, 50);
 
         });
 
@@ -93,7 +83,7 @@ function openBook() {
 }
 
 // ------------------------------
-// CLOSE BOOK BACK TO SHELF
+// CLOSE BOOK
 // ------------------------------
 function closeBook() {
 
@@ -106,7 +96,7 @@ function closeBook() {
 }
 
 // ------------------------------
-// SHELF CLICK EVENTS
+// SHELF CLICK
 // ------------------------------
 function setupShelf() {
 
@@ -117,7 +107,7 @@ function setupShelf() {
 }
 
 // ------------------------------
-// NAVIGATION BUTTONS
+// NAVIGATION
 // ------------------------------
 function setupNavigation() {
 
@@ -144,11 +134,11 @@ function setupKeyboard() {
 
         if (!isBookOpen) return;
 
-        if (e.keyCode == 37) {
+        if (e.keyCode === 37) {
             $("#flipbook").turn("previous");
         }
 
-        if (e.keyCode == 39) {
+        if (e.keyCode === 39) {
             $("#flipbook").turn("next");
         }
     });
@@ -166,7 +156,7 @@ function setupResize() {
 }
 
 // ------------------------------
-// START EVERYTHING
+// INIT EVERYTHING
 // ------------------------------
 $(document).ready(function () {
 
