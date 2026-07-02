@@ -6,12 +6,7 @@
  * Copyright (C) 2012 Emmanuel Garcia
  * All rights reserved
  **/
-$("#flipbook").turn({
-    width: 800,
-    height: 615,
-    autoCenter: true,
-    display: "double"
-}); 
+
 (function($) {
 
 'use strict';
