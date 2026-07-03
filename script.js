@@ -58,7 +58,7 @@ function openBook() {
 
         $("#book-container")
             .removeClass("hidden")
-            .css("display", "block");
+            .css("display", "flex");
 
         $("#flipbook").css("visibility", "hidden");
 
@@ -66,15 +66,15 @@ function openBook() {
 
             setTimeout(() => {
 
-                // 🔥 IMPORTANT: reflow reset fix
-const $book = $("#flipbook");
+                const $book = $("#flipbook");
 
-if (!$book.data("turn")) {
-    initFlipbook();
-} else {
-    $book.turn("page", 1);
-}
-                initFlipbook();
+                // initialize ONCE
+                if (!$book.data("turn")) {
+                    initFlipbook();
+                }
+
+                // ALWAYS reset to first page
+                $book.turn("page", 1);
 
                 setTimeout(() => {
                     $("#flipbook").css("visibility", "visible");
