@@ -22,7 +22,7 @@ function initFlipbook() {
         elevation: 50,
         gradients: true
     });
-
+document.body.classList.add("flipbook-open");
     // resize once
     resize();
 }
@@ -55,5 +55,26 @@ $(document).ready(function () {
 
         if (e.keyCode === 37) $("#flipbook").turn("previous");
         if (e.keyCode === 39) $("#flipbook").turn("next");
+        
     });
 });
+
+// -- wheel lock --//
+let wheelLock = false;
+
+document.getElementById("flipbook").addEventListener("wheel", function (e) {
+  e.preventDefault();
+
+  if (wheelLock) return;
+  wheelLock = true;
+
+  if (e.deltaY > 0) {
+    $("#flipbook").turn("next");
+  } else {
+    $("#flipbook").turn("previous");
+  }
+
+  setTimeout(() => {
+    wheelLock = false;
+  }, 600); // prevents page spam flipping
+}, { passive: false });
