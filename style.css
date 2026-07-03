@@ -107,6 +107,8 @@ div.content {
   padding: 0px 0px;
   height: 100%;
   overflow-x: auto;
+  position: relative;
+  min-height: 100vh;
 }
 
 div.about {
@@ -168,9 +170,15 @@ div.about {
 body1 { font-family: "Open Sans", sans-serif; color: #FFFFFF; background-color: #000000; overflow-x: auto; white-space: nowrap; }
 /*This is a comment.
 begin text adding arrows to flipbook*/
-#book-container{
-    position: relative;
-    display: inline-block;
+#book-container {
+  position: fixed;
+  top: 0;
+  left: 200px; /* matches sidebar */
+  right: 0;
+  bottom: 0;
+  display: none;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
 }
 
 .nav-arrow{
