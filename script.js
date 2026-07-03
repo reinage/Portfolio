@@ -58,15 +58,6 @@ function resize() {
 
     $book.turn("size", w, h);
 
-    // 🔥 THIS is the missing link
-    const offset = $book.offset();
-
-    $(".book-ui").css({
-        width: w,
-        height: h,
-        left: offset.left,
-        top: offset.top
-    });
 }
 
 // ----------------------
