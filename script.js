@@ -57,7 +57,16 @@ function resize() {
     else h = w / ratio;
 
     $book.turn("size", w, h);
-    $(".book-ui").css({ width: w, height: h });
+
+    // 🔥 THIS is the missing link
+    const offset = $book.offset();
+
+    $(".book-ui").css({
+        width: w,
+        height: h,
+        left: offset.left,
+        top: offset.top
+    });
 }
 
 // ----------------------
