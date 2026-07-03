@@ -199,11 +199,34 @@ begin text adding arrows to flipbook*/
 
 
 }
-.nav-arrow, 
 #close-book {
   position: absolute;
-  z-index: 10000;
-}#previous {
+  top: 20px;
+  right: 20px;
+
+  background: transparent;
+  border: 1px solid #72ccc9;
+  color: #72ccc9;
+
+  padding: 8px 14px;
+  border-radius: 20px;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+  z-index: 10001;
+}
+#close-book:hover {
+  background: #72ccc9;
+  color: black;
+}
+#close-book:active {
+  transform: scale(0.95);
+}
+#previous {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
