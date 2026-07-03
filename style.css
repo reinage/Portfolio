@@ -191,7 +191,10 @@ div.about {
   justify-content: center;
   align-items: center;
 }
-
+.flipbook-wrap {
+  position: relative;
+  display: inline-block;
+}
 /* Flipbook layer */
 #flipbook {
   position: relative;
@@ -200,12 +203,10 @@ div.about {
 
 /* UI ABOVE flipbook */
 .book-ui {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  z-index: 9999;
   pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.4s ease;
+  z-index: 9999;
 }
 
 .book-ui.hidden {
