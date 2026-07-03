@@ -12,19 +12,27 @@ function goBack() {
 // ----------------------
 function initFlipbook() {
 
+    const isMobile = window.innerWidth < 700;
+    const isLandscape = window.innerWidth > window.innerHeight;
+
+    const displayMode = (isMobile && isLandscape) ? "double"
+                        : (isMobile ? "single"
+                        : "double");
+
     const $book = $("#flipbook");
 
-    if ($book.length === 0) return;
+    if (!$book.length) return;
 
     $book.turn({
-        display: window.innerWidth < 700 ? "single" : "double",
+        display: displayMode,
         autoCenter: true,
-        elevation: 50,
+        elevation: 20,
         gradients: true
     });
 
     document.body.classList.add("flipbook-open");
 showUI();
+setTimeout(hideUI, UI_HIDE_DELAY);
     resize();
 }
 
