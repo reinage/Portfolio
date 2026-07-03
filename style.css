@@ -185,17 +185,18 @@ div.about {
 
 .flipbook-stage {
     position: fixed;
+
     top: 0;
     left: 220px;
-    width: calc(100vw - 220px);
-    height: 100vh;
-
-    padding: 10px;
-    box-sizing: border-box;
+    right: 0;
+    bottom: 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-sizing: border-box;
+    padding: 20px;
 }
 /* Flipbook layer */
 #flipbook {
