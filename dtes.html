@@ -46,22 +46,44 @@
   </div>
 <div class="content">
 
-<body class="book-page">
-<div class="book-ui">
-  <button class="nav-btn" onclick="$('#flipbook').turn('previous')">‹</button>
-  <button class="nav-btn" onclick="$('#flipbook').turn('next')">›</button>
-  <button class="close-btn" onclick="goBack()">✕</button>
-</div>
-<div id="flipbook">
+  <!-- FLIPBOOK STAGE (IMPORTANT WRAPPER) -->
+  <div class="flipbook-stage">
 
-  <div class="page" style="background-image:url('DTESzine/DTES0.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES1.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES2.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES3.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES4.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES5.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES6.png')"></div>
-  <div class="page" style="background-image:url('DTESzine/DTES7.png')"></div>
+    <!-- UI OVERLAY -->
+    <div class="book-ui">
+
+      <button class="nav-btn prev"
+        onclick="$('#flipbook').turn('previous')">
+        ‹
+      </button>
+
+      <button class="nav-btn next"
+        onclick="$('#flipbook').turn('next')">
+        ›
+      </button>
+
+      <button class="close-btn"
+        onclick="goBack()">
+        ✕
+      </button>
+
+    </div>
+
+    <!-- FLIPBOOK -->
+    <div id="flipbook">
+
+      <div class="page" style="background-image:url('DTESzine/DTES0.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES1.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES2.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES3.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES4.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES5.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES6.png')"></div>
+      <div class="page" style="background-image:url('DTESzine/DTES7.png')"></div>
+
+    </div>
+
+  </div>
 
 </div>
 
