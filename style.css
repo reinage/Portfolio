@@ -182,17 +182,30 @@ div.about {
    UI OVERLAY (CLOSE BUTTON ETC)
 ========================= */
 
-.book-ui {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+.flipbook-stage {
+  position: relative;
+  width: 100%;
   height: 100vh;
-  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flipbook layer */
+#flipbook {
+  position: relative;
+  z-index: 1;
+}
+
+/* UI ABOVE flipbook */
+.book-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 10;  /* IMPORTANT */
   pointer-events: none;
 }
 
-/* shared button style */
+/* Buttons re-enabled */
 .nav-btn,
 .close-btn {
   pointer-events: auto;
@@ -203,7 +216,7 @@ div.about {
   cursor: pointer;
 }
 
-/* LEFT arrow */
+/* positions */
 .nav-btn.prev {
   position: absolute;
   left: 20px;
@@ -211,7 +224,6 @@ div.about {
   transform: translateY(-50%);
 }
 
-/* RIGHT arrow */
 .nav-btn.next {
   position: absolute;
   right: 20px;
@@ -219,7 +231,6 @@ div.about {
   transform: translateY(-50%);
 }
 
-/* CLOSE button */
 .close-btn {
   position: absolute;
   top: 20px;
