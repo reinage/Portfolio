@@ -24,7 +24,7 @@ function initFlipbook() {
     });
 
     document.body.classList.add("flipbook-open");
-
+showUI();
     resize();
 }
 
@@ -65,7 +65,36 @@ $(document).ready(function () {
         if (e.keyCode === 39) $("#flipbook").turn("next");
     });
 });
+let uiTimer;
+const UI_HIDE_DELAY = 2000;
 
+function showUI() {
+    const ui = document.querySelector(".book-ui");
+    if (!ui) return;
+
+    ui.classList.remove("hidden");
+
+    clearTimeout(uiTimer);
+    uiTimer = setTimeout(hideUI, UI_HIDE_DELAY);
+}
+
+function hideUI() {
+    const ui = document.querySelector(".book-ui");
+    if (!ui) return;
+
+    ui.classList.add("hidden");
+}
+
+// single activity handler (IMPORTANT)
+function registerUIActivity() {
+    showUI();
+}
+
+// events
+document.addEventListener("mousemove", registerUIActivity);
+document.addEventListener("mousedown", registerUIActivity);
+document.addEventListener("touchstart", registerUIActivity);
+document.addEventListener("keydown", registerUIActivity);
 // ----------------------
 // WHEEL CONTROL
 // ----------------------
