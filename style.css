@@ -191,14 +191,11 @@ div.about {
 
     width: calc(100vw - 220px);
     height: 100vh;
+   margin:10px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.flipbook-wrap {
-  position: relative;
-  display: inline-block;
 }
 /* Flipbook layer */
 #flipbook {
