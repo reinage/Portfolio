@@ -30,6 +30,9 @@ function resizeBook() {
 
     if (!$book.data("turn")) return;
 
+    // 🔥 DO NOT resize if hidden
+    if ($("#book-container").css("visibility") === "hidden") return;
+
     let maxWidth = window.innerWidth * 0.9;
     let maxHeight = window.innerHeight * 0.9;
 
@@ -56,35 +59,36 @@ function openBook() {
 
     $("#shelf").fadeOut(200, function () {
 
-        $("#book-container")
-            .removeClass("hidden")
-            .css("display", "flex");
+        const $container = $("#book-container");
+        const $book = $("#flipbook");
 
-        $("#flipbook").css("visibility", "hidden");
+        $container
+            .removeClass("hidden")
+            .css({
+                display: "flex",
+                visibility: "hidden"
+            });
 
         requestAnimationFrame(() => {
 
             setTimeout(() => {
 
-                const $book = $("#flipbook");
-
-                // initialize ONCE
                 if (!$book.data("turn")) {
                     initFlipbook();
                 }
 
-                // ALWAYS reset to first page
                 $book.turn("page", 1);
 
+                // IMPORTANT: force reflow BEFORE sizing
+                resizeBook();
+
+                // NOW reveal
                 setTimeout(() => {
-                    $("#flipbook").css("visibility", "visible");
-                    resizeBook();
-                }, 80);
+                    $container.css("visibility", "visible");
+                }, 50);
 
-            }, 50);
-
+            }, 80);
         });
-
     });
 }
 // ------------------------------
@@ -93,16 +97,17 @@ function openBook() {
 function closeBook() {
 
     if (!isBookOpen) return;
-
     isBookOpen = false;
 
     $("#book-container").fadeOut(200, function () {
 
         $("#shelf").fadeIn(300);
 
-        // optional safety reset
-        $("#flipbook").turn("page", 1);
+        const $book = $("#flipbook");
 
+        if ($book.data("turn")) {
+            $book.turn("page", 1);
+        }
     });
 }
 
