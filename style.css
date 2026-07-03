@@ -185,14 +185,13 @@ div.about {
 
 .flipbook-stage {
     position: fixed;
-
     top: 0;
-    left: 220px;      /* sidebar width */
-
+    left: 220px;
     width: calc(100vw - 220px);
     height: 100vh;
-   margin:10px;
-   padding:10px;
+
+    padding: 10px;
+    box-sizing: border-box;
 
     display: flex;
     justify-content: center;
