@@ -4,7 +4,7 @@ console.log("script loaded");
 // BACK BUTTON
 // ----------------------
 function goBack() {
-    window.location.href = "index.html";
+    window.location.href = "MEd.html";
 }
 
 // ----------------------
