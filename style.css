@@ -202,7 +202,7 @@ div.about {
 .book-ui {
   position: absolute;
   inset: 0;
-  z-index: 10;  /* IMPORTANT */
+  z-index: 9999;
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.4s ease;
@@ -226,14 +226,6 @@ div.about {
 }
 
 
-
-/* UI now locked to flipbook box */
-.book-ui {
-  position: absolute;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-}
 
 /* buttons */
 .nav-btn,
