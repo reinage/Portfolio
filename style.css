@@ -254,7 +254,8 @@ begin text adding arrows to flipbook*/
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
 }
 /*end flipbook*/
 /*
