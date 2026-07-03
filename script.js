@@ -17,13 +17,14 @@ function initFlipbook() {
     if ($book.length === 0) return;
 
     $book.turn({
-        display: "double",
+        display: window.innerWidth < 700 ? "single" : "double",
         autoCenter: true,
         elevation: 50,
         gradients: true
     });
-document.body.classList.add("flipbook-open");
-    // resize once
+
+    document.body.classList.add("flipbook-open");
+
     resize();
 }
 
@@ -31,12 +32,13 @@ document.body.classList.add("flipbook-open");
 // RESIZE
 // ----------------------
 function resize() {
+
     const $book = $("#flipbook");
 
     if (!$book.data("turn")) return;
 
     const sidebarWidth = window.innerWidth > 700 ? 220 : 0;
-    const maxWidth = 1000; // prevents too-wide spread
+    const maxWidth = 1000;
 
     let w = Math.min(window.innerWidth - sidebarWidth, maxWidth) * 0.9;
     let h = window.innerHeight * 0.85;
@@ -47,8 +49,6 @@ function resize() {
     else h = w / ratio;
 
     $book.turn("size", w, h);
-}
-    
 }
 
 // ----------------------
@@ -61,21 +61,21 @@ $(document).ready(function () {
     $(window).on("resize", resize);
 
     $(document).on("keydown", function (e) {
-
         if (e.keyCode === 37) $("#flipbook").turn("previous");
         if (e.keyCode === 39) $("#flipbook").turn("next");
-        
     });
 });
 
-// -- wheel lock --//
+// ----------------------
+// WHEEL CONTROL
+// ----------------------
 let wheelLock = false;
 
 document.addEventListener("wheel", function (e) {
 
     const $book = $("#flipbook");
 
-    if (!$book.data("turn")) return;
+    if (!$book.length || !$book.data("turn")) return;
 
     e.preventDefault();
 
