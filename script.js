@@ -36,8 +36,23 @@ function resize() {
 
     if (!$book.data("turn")) return;
 
-    let w = window.innerWidth * 0.9;
-    let h = window.innerHeight * 0.9;
+    // sidebar width compensation
+    const sidebarWidth = window.innerWidth > 700 ? 220 : 0;
+
+    const availableWidth = window.innerWidth - sidebarWidth;
+    const availableHeight = window.innerHeight;
+
+    let w = availableWidth * 0.9;
+    let h = availableHeight * 0.85;
+
+    // optional: enforce book ratio (prevents stretching)
+    const ratio = 800 / 600;
+
+    if (w / h > ratio) {
+        w = h * ratio;
+    } else {
+        h = w / ratio;
+    }
 
     $book.turn("size", w, h);
 }
