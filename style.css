@@ -225,25 +225,44 @@ div.about {
   cursor: pointer;
 }
 
-/* positions */
-.nav-btn.prev {
+
+
+/* UI now locked to flipbook box */
+.book-ui {
   position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
 }
 
-.nav-btn.next {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
+/* buttons */
+.nav-btn,
 .close-btn {
+  pointer-events: auto;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid #72ccc9;
+  color: #72ccc9;
+}
+
+/* LEFT */
+.nav-btn.prev {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* RIGHT */
+.nav-btn.next {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* CLOSE (relative to flipbook, not screen) */
+.close-btn {
+  top: 10px;
+  right: 10px;
 }
 /* =========================
    ABOUT IMAGE PANEL
