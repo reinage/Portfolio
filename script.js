@@ -15,7 +15,7 @@ function initBook($book) {
         elevation: 50,
         gradients: true
     });
-} 
+}
 
 // OPEN BOOK
 function openBook(id) {
