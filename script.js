@@ -45,10 +45,13 @@ function resize() {
 
     if (!$book.data("turn")) return;
 
-    const sidebarWidth = window.innerWidth > 700 ? 220 : 0;
-    const maxWidth = 1000;
+const sidebarWidth = window.innerWidth > 700 ? 220 : 0;
+const stagePadding = 40;
 
-    let w = Math.min(window.innerWidth - sidebarWidth, maxWidth) * 0.9;
+let w = Math.min(
+    window.innerWidth - sidebarWidth - stagePadding,
+    maxWidth
+) * 0.9;
     let h = window.innerHeight * 0.85;
 
     const ratio = 800 / 600;
