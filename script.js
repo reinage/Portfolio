@@ -60,16 +60,21 @@ function openBook() {
             .removeClass("hidden")
             .css("display", "block");
 
-        // IMPORTANT: prevent turn.js measuring hidden layout
         $("#flipbook").css("visibility", "hidden");
 
         requestAnimationFrame(() => {
 
             setTimeout(() => {
 
+                // 🔥 IMPORTANT: reflow reset fix
+                const $book = $("#flipbook");
+
+                if ($book.data("turn")) {
+                    $book.turn("destroy");
+                }
+
                 initFlipbook();
 
-                // force layout stabilization before showing
                 setTimeout(() => {
                     $("#flipbook").css("visibility", "visible");
                     resizeBook();
@@ -81,7 +86,6 @@ function openBook() {
 
     });
 }
-
 // ------------------------------
 // CLOSE BOOK
 // ------------------------------
