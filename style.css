@@ -298,7 +298,8 @@ body.flipbook-open {
   }
 }
 @media (max-width: 700px) {
-  body.flipbook-open {
-    overflow: auto; /* allow mobile scrolling */
+  body {
+    overflow-x: hidden;
+    touch-action: pan-y; /* blocks horizontal swipe scrolling */
   }
 }
