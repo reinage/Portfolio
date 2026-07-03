@@ -184,16 +184,15 @@ div.about {
 
 .book-ui {
   position: fixed;
-  top: 20px;
+  top: 0;
   left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   pointer-events: none;
 }
 
+/* shared button style */
 .nav-btn,
 .close-btn {
   pointer-events: auto;
@@ -202,6 +201,29 @@ div.about {
   border: 1px solid white;
   padding: 10px 14px;
   cursor: pointer;
+}
+
+/* LEFT arrow */
+.nav-btn.prev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* RIGHT arrow */
+.nav-btn.next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* CLOSE button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 /* =========================
    ABOUT IMAGE PANEL
@@ -217,6 +239,9 @@ div.about {
   overflow: auto;
 }
 
+body.flipbook-open {
+  overflow: hidden;
+}
 /* =========================
    RESPONSIVE
 ========================= */
