@@ -46,14 +46,31 @@
   </div>
 <div class="content">
 
-<body class="book-page">
-<div class="book-ui">
-  <button class="nav-btn" onclick="$('#flipbook').turn('previous')">‹</button>
-  <button class="nav-btn" onclick="$('#flipbook').turn('next')">›</button>
-  <button class="close-btn" onclick="goBack()">✕</button>
-</div>
-<div id="flipbook">
+  <!-- FLIPBOOK STAGE (IMPORTANT WRAPPER) -->
+  <div class="flipbook-stage">
 
+    <!-- UI OVERLAY -->
+    <div class="book-ui">
+
+      <button class="nav-btn prev"
+        onclick="$('#flipbook').turn('previous')">
+        ‹
+      </button>
+
+      <button class="nav-btn next"
+        onclick="$('#flipbook').turn('next')">
+        ›
+      </button>
+
+      <button class="close-btn"
+        onclick="goBack()">
+        ✕
+      </button>
+
+    </div>
+
+    <!-- FLIPBOOK -->
+    <div id="flipbook">
   <div class="page" style="background-image:url('letter/letter0.png')"></div>
   <div class="page" style="background-image:url('letter/letter1.png')"></div>
   <div class="page" style="background-image:url('letter/letter2.png')"></div>
