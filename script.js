@@ -107,30 +107,4 @@ document.addEventListener("mousemove", registerUIActivity);
 document.addEventListener("mousedown", registerUIActivity);
 document.addEventListener("touchstart", registerUIActivity);
 document.addEventListener("keydown", registerUIActivity);
-// ----------------------
-// WHEEL CONTROL
-// ----------------------
-let wheelLock = false;
 
-document.addEventListener("wheel", function (e) {
-
-    const $book = $("#flipbook");
-
-    if (!$book.length || !$book.data("turn")) return;
-
-    e.preventDefault();
-
-    if (wheelLock) return;
-    wheelLock = true;
-
-    if (e.deltaY > 0) {
-        $book.turn("next");
-    } else {
-        $book.turn("previous");
-    }
-
-    setTimeout(() => {
-        wheelLock = false;
-    }, 500);
-
-}, { passive: false });
