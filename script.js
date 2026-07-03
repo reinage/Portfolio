@@ -67,12 +67,13 @@ function openBook() {
             setTimeout(() => {
 
                 // 🔥 IMPORTANT: reflow reset fix
-                const $book = $("#flipbook");
+const $book = $("#flipbook");
 
-                if ($book.data("turn")) {
-                    $book.turn("destroy");
-                }
-
+if (!$book.data("turn")) {
+    initFlipbook();
+} else {
+    $book.turn("page", 1);
+}
                 initFlipbook();
 
                 setTimeout(() => {
@@ -92,10 +93,16 @@ function openBook() {
 function closeBook() {
 
     if (!isBookOpen) return;
+
     isBookOpen = false;
 
     $("#book-container").fadeOut(200, function () {
+
         $("#shelf").fadeIn(300);
+
+        // optional safety reset
+        $("#flipbook").turn("page", 1);
+
     });
 }
 
