@@ -57,6 +57,7 @@ function resize() {
     else h = w / ratio;
 
     $book.turn("size", w, h);
+    $(".book-ui").css({ width: w, height: h });
 }
 
 // ----------------------
