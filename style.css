@@ -1,108 +1,63 @@
 body {
   margin: 0;
-  font-family: sans-serif;
   background: black;
   color: white;
+  font-family: sans-serif;
 }
 
-/* layout */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100vh;
-}
- 
-.content {
-  margin-left: 200px;
-}
+/* ---------------- SHELF ---------------- */
 
-/* shelf */
-#shelf {
+.shelf {
   display: flex;
   gap: 20px;
   padding: 40px;
 }
 
 .book {
-  width: 120px;
-  cursor: pointer;
+  width: 150px;
+  text-decoration: none;
+  color: white;
 }
 
 .book img {
   width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-/* BOOK STAGE */
-#book-container {
-  position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.9);
+.book:hover img {
+  transform: scale(1.05);
 }
 
-/* ACTIVE BOOK ONLY */
-.book-instance {
-  display: none;
-  width: 90vw;
-  height: 90vh;
-  justify-content: center;
-  align-items: center;
-}
+/* ---------------- FLIPBOOK PAGE ---------------- */
 
-.book-instance.active {
-  display: flex;
-}
-
-/* flipbook */
-.flipbook {
+#flipbook {
   width: 800px;
   height: 600px;
+  margin: 80px auto;
 }
 
-/* pages */
 .page {
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* UI overlay */
+/* ---------------- UI OVERLAY ---------------- */
+
 .book-ui {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-/* buttons */
-.nav-btn, .close-btn {
-  pointer-events: auto;
-  position: absolute;
-  z-index: 9999;
-  background: rgba(0,0,0,0.7);
-  color: #72ccc9;
-  border: 1px solid #72ccc9;
-  padding: 10px;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.left {
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.right {
+  position: fixed;
+  top: 20px;
   right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  z-index: 9999;
 }
 
 .close-btn {
-  top: 20px;
-  right: 20px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 14px;
+  cursor: pointer;
 }
+
+/* arrows inside turn.js */
