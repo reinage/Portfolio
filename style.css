@@ -173,12 +173,16 @@ begin text adding arrows to flipbook*/
 #book-container {
   position: fixed;
   top: 0;
-  left: 200px; /* matches sidebar */
+  left: 200px; /* sidebar width */
   right: 0;
   bottom: 0;
-  display: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: rgba(0,0,0,0.95);
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .nav-arrow{
@@ -192,8 +196,24 @@ begin text adding arrows to flipbook*/
 
     opacity: 1;
     transition: opacity .3s;
+
+
+}
+.nav-arrow, 
+#close-book {
+  position: absolute;
+  z-index: 10000;
+}#previous {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+#next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .left{
     left: 15px;
 }
@@ -208,6 +228,8 @@ begin text adding arrows to flipbook*/
     height: 615px;
     position: relative;
     margin: auto;
+  z-index: 1;
+}
 }
 
 .page {
