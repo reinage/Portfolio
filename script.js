@@ -62,19 +62,25 @@ $(document).ready(function () {
 // -- wheel lock --//
 let wheelLock = false;
 
-document.getElementById("flipbook").addEventListener("wheel", function (e) {
-  e.preventDefault();
+document.addEventListener("wheel", function (e) {
 
-  if (wheelLock) return;
-  wheelLock = true;
+    const $book = $("#flipbook");
 
-  if (e.deltaY > 0) {
-    $("#flipbook").turn("next");
-  } else {
-    $("#flipbook").turn("previous");
-  }
+    if (!$book.data("turn")) return;
 
-  setTimeout(() => {
-    wheelLock = false;
-  }, 600); // prevents page spam flipping
+    e.preventDefault();
+
+    if (wheelLock) return;
+    wheelLock = true;
+
+    if (e.deltaY > 0) {
+        $book.turn("next");
+    } else {
+        $book.turn("previous");
+    }
+
+    setTimeout(() => {
+        wheelLock = false;
+    }, 500);
+
 }, { passive: false });
