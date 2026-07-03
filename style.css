@@ -74,6 +74,7 @@ div.content {
   margin-left: 220px;
   padding: 20px;
   min-height: 100vh;
+   margin:0px;
 }
 
 div.about {
@@ -184,12 +185,17 @@ div.about {
 ========================= */
 
 .flipbook-stage {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+
+    top: 0;
+    left: 220px;      /* sidebar width */
+
+    width: calc(100vw - 220px);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .flipbook-wrap {
   position: relative;
@@ -278,9 +284,6 @@ body.flipbook-open {
     float: left;
   }
 
-  div.content {
-    margin-left: 0;
-  }
 
   .kofi-wiggle {
     display: none;
