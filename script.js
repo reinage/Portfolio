@@ -31,30 +31,24 @@ document.body.classList.add("flipbook-open");
 // RESIZE
 // ----------------------
 function resize() {
-
     const $book = $("#flipbook");
 
     if (!$book.data("turn")) return;
 
-    // sidebar width compensation
     const sidebarWidth = window.innerWidth > 700 ? 220 : 0;
+    const maxWidth = 1000; // prevents too-wide spread
 
-    const availableWidth = window.innerWidth - sidebarWidth;
-    const availableHeight = window.innerHeight;
+    let w = Math.min(window.innerWidth - sidebarWidth, maxWidth) * 0.9;
+    let h = window.innerHeight * 0.85;
 
-    let w = availableWidth * 0.9;
-    let h = availableHeight * 0.85;
-
-    // optional: enforce book ratio (prevents stretching)
     const ratio = 800 / 600;
 
-    if (w / h > ratio) {
-        w = h * ratio;
-    } else {
-        h = w / ratio;
-    }
+    if (w / h > ratio) w = h * ratio;
+    else h = w / ratio;
 
     $book.turn("size", w, h);
+}
+    
 }
 
 // ----------------------
