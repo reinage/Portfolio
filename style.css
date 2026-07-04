@@ -307,8 +307,9 @@ shelf look pretty?
   justify-content: center;
   align-items: flex-end;
 
+  overflow: hidden; /* important */
   box-sizing: border-box;
-  overflow-x: hidden;
+  container-type: inline-size;
 }
 
 .shelf-wood {
@@ -327,7 +328,7 @@ background:
 	border-left: 25px solid transparent;
 	border-right: 25px solid transparent;
 	height: 0;
-	width: 100%;
+	width: auto;
 
   box-shadow: inset 0 10px 20px rgba(0,0,0,0.4);
 }
@@ -340,12 +341,16 @@ background:
   flex-direction: row;
   align-items: flex-end;
 
-  justify-content: space-evenly;
-  width: 100%;
-
+  justify-content: center;
   gap: clamp(10px, 2vw, 30px);
 
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+
+  flex-wrap: nowrap;
+
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .zine {
@@ -449,6 +454,24 @@ background:
 
   .kofi-wiggle {
     display: none;
+  }
+}
+@container (max-width: 900px) {
+  .shelf-books {
+    transform: scale(0.9);
+    transform-origin: bottom center;
+  }
+}
+
+@container (max-width: 700px) {
+  .shelf-books {
+    transform: scale(0.8);
+  }
+}
+
+@container (max-width: 500px) {
+  .shelf-books {
+    transform: scale(0.7);
   }
 }
 
