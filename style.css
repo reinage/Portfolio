@@ -94,7 +94,9 @@ div.gallery {
   width: auto;
   object-fit: contain;
 }
-
+body.gallery {
+  overflow: hidden;
+}
 
 div.about {
   margin-right: 40vw;
@@ -302,7 +304,10 @@ body.flipbook-open {
     overflow-x: hidden;
     overflow-y: auto;
   }
-
+  body.gallery {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
   .gallery img {
     width: 100%;
     height: auto;
