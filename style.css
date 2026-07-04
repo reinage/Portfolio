@@ -167,7 +167,7 @@ div.about {
 
 .shelf {
   display: flex;
-  gap: 20px;
+gap: clamp(8px,1vw,30px);
   padding: 40px;
 }
 
@@ -467,7 +467,7 @@ padding-bottom: -10px;
 
     flex-wrap: nowrap;
 
-    gap: 16px;
+    gap:  clamp(8px,1vw,24px);
 
     padding: 0 16px 10px;
 
