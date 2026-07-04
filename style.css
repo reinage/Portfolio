@@ -327,6 +327,9 @@ body.flipbook-open {
   .sidebar a {
     float: left;
   }
+.content {
+   margin: 0px;
+}
   .flipbook-stage {
     position: relative;
     left: auto;
