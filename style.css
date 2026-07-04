@@ -364,25 +364,24 @@ margin-bottom: -6px;
 
   transition: transform 0.3s ease, gap 0.3s ease;
 	
-  transform: translateZ(1px); /*parallax*/
+  will-change: transform; /*parallax*/
 }
 
 .zine {
-    flex: 1 1 0;
-    max-width: 220px;
-    min-width: 90px;
-
+  flex: 0 1 auto;
+  width: clamp(80px, 12vw, 220px);
+  max-width: 220px;
+	margin: -6px;
   transform: translateY(6px);
-  transition: transform 0.25s ease, width 0.25s ease;
-  transform-origin: bottom center;
+  transition: transform 0.25s ease;
 }
-
 
 .zine img {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 8px 10px rgba(0,0,0,0.5));
+  filter: drop-shadow(6px 6px 0 rgba(255,255,255,0.12))
+          drop-shadow(10px 10px 0 rgba(0,0,0,0.25));
 	
 }
 
@@ -405,6 +404,17 @@ margin-bottom: -6px;
   z-index: 3;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
 }
+
+.zine:first-of-type {
+  margin-left: 0;
+}
+.zine.small {
+  width: clamp(60px, 8vw, 120px);
+}
+.zine.large {
+  width: clamp(120px, 14vw, 260px);
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -459,29 +469,27 @@ margin-bottom: -6px;
   }
 
 
-  .shelf-books {
-    justify-content: flex-start;
-
-    overflow-y: hidden;
-
-    flex-wrap: nowrap;
-
-    gap:  clamp(8px,1vw,24px);
-
-    padding: 0 16px 10px;
-
-    -webkit-overflow-scrolling: touch;
-  }
-
   .shelf-stage {
     overflow: visible;
     overflow-y: hidden;
+  overflow-x: hidden;
+  }
+
+  .shelf-books {
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+
+    gap: 10px;
+
+    transform: scale(0.85);
   }
 
   .zine {
-    width: 110px;
-    transform: translateY(6px);
+    width: 90px;
   }
+
 
 
   .kofi-wiggle {
