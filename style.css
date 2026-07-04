@@ -318,20 +318,24 @@ shelf look pretty?
   left: 0;
   right: 0;
   bottom: 0;
-	
+
+  height: 60px;
   z-index: 0;
-    height: 60px;
 
-    background-image: url("https://www.openfootage.net/wp-content/uploads/2021/03/oakwood_texture_8k0004-1024x683.jpg");
-   	background-color: #0004; 
-	background-blend-mode:darken;
-	background-size: cover;
-    background-position: center;
-    clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
-	
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+    url("https://www.openfootage.net/wp-content/uploads/2021/03/oakwood_texture_8k0004-1024x683.jpg");
 
-  transform: translateZ(0); /*parallax*/
-  box-shadow: inset 0 10px 20px rgba(0,0,0,0.4);
+  background-size: cover;
+  background-position: center;
+
+  clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
+
+  box-shadow:
+    inset 0 10px 20px rgba(0,0,0,.4),
+    0 6px 12px rgba(0,0,0,.35);
+
+  transform: translateZ(0);
 }
 
 .shelf-books {
