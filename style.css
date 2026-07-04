@@ -159,7 +159,10 @@ div.about {
 }
 
 .book:hover img {
-  transform: scale(1.05);
+  transform:
+translateY(-12px)
+scale(1.08)
+rotate(-1deg);
 }
 
 /* =========================
