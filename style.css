@@ -340,7 +340,6 @@ overflow: visible;
 }
 
 .shelf-books {
-	
   position: relative;
   z-index: 2;
 
@@ -349,12 +348,12 @@ overflow: visible;
   align-items: flex-end;
 margin-bottom: -6px;
 
-  justify-content: space-between;
 
   width: 100%;
   max-width: 100%;
 
-  gap: clamp(8px, 1.5vw, 24px);
+
+  gap: clamp(6px, 1.5vw, 22px);
 
   flex-wrap: nowrap;
 
@@ -368,12 +367,15 @@ margin-bottom: -6px;
 }
 
 .zine {
-  flex: 0 1 auto;
-  width: clamp(80px, 12vw, 220px);
-  max-width: 220px;
-	margin: -6px;
+  flex: 1 1 0;
+  min-width: 60px;
+  max-width: 200px;
+
+  width: clamp(70px, 10vw, 200px);
+
+  margin: -4px;
   transform: translateY(6px);
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease, width 0.2s ease;
 }
 
 .zine img {
@@ -494,24 +496,6 @@ margin-bottom: -6px;
 
   .kofi-wiggle {
     display: none;
-  }
-}
-@container (max-width: 900px) {
-  .shelf-books {
-    transform: scale(0.9);
-    transform-origin: bottom center;
-  }
-}
-
-@container (max-width: 700px) {
-  .shelf-books {
-    transform: scale(0.8);
-  }
-}
-
-@container (max-width: 500px) {
-  .shelf-books {
-    transform: scale(0.7);
   }
 }
 
