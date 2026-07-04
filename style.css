@@ -347,6 +347,7 @@ background:
 
   flex-wrap: wrap;
 }
+
 .zine {
   width: clamp(110px, 12vw, 160px);
   flex: 0 0 auto;
