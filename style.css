@@ -301,11 +301,14 @@ shelf look pretty?
 .shelf-stage {
   position: relative;
   width: 100%;
-   margin-right:20%;
   padding: 60px 40px 40px;
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .shelf-wood {
@@ -328,16 +331,21 @@ background:
 
   box-shadow: inset 0 10px 20px rgba(0,0,0,0.4);
 }
+
 .shelf-books {
   position: relative;
   z-index: 2;
+
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 
-  gap: 20px;
+  justify-content: space-evenly;
+  width: 100%;
 
-  max-width: 100%;
+  gap: clamp(10px, 2vw, 30px);
+
+  flex-wrap: wrap;
 }
 .zine {
   width: clamp(110px, 12vw, 160px);
