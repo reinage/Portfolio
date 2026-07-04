@@ -214,16 +214,14 @@ rotate(-1deg);
 .flipbook-stage {
   position: relative;
   width: 100%;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   box-sizing: border-box;
-  padding: 20px;
-
-  z-index: 1;
 }
 /* Flipbook layer */
 #flipbook {
@@ -327,9 +325,19 @@ body.flipbook-open {
   .sidebar a {
     float: left;
   }
-.content {
-   margin-left: 0px;
-} 
+  div.content {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  #flipbook {
+    max-width: 100vw;
+  }
   .flipbook-stage {
     position: relative;
     left: auto;
