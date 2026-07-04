@@ -285,8 +285,17 @@ body.flipbook-open {
   .sidebar a {
     float: left;
   }
-
-
+  .flipbook-stage {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+  }
+}
   .kofi-wiggle {
     display: none;
   }
