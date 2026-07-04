@@ -314,11 +314,11 @@ shelf look pretty?
   right: 0;
   bottom: 0;
 
-  background: linear-gradient(
-    135deg,
-    #6b4b2a,
-    #3f2a17
-  );
+background:
+    url("https://www.openfootage.net/wp-content/uploads/2021/03/oakwood_texture_8k0004-1024x683.jpg");
+	background-color: #0004; 
+	background-blend-mode: darken;
+	
   z-index: 0;
 	border-bottom: 50px solid #555;
 	border-left: 25px solid transparent;
