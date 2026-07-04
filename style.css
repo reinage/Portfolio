@@ -74,7 +74,10 @@ div.content {
   margin-left: 220px;
   padding: 20px;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
+
 
 div.gallery {
   display: flex;
@@ -209,22 +212,27 @@ rotate(-1deg);
 ========================= */
 
 .flipbook-stage {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 100vh;
 
-    width: 100%;
-    height: calc(100vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
 
-    box-sizing: border-box;
-    padding: 20px;
+  z-index: 1;
 }
 /* Flipbook layer */
 #flipbook {
   position: relative;
   z-index: 1;
+   max-width:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
 body.flipbook-open {
   overflow: hidden;
@@ -235,7 +243,7 @@ body.flipbook-open {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10;
 }
 
 .book-ui.hidden {
