@@ -169,7 +169,7 @@ div.about {
 #flipbook {
   width: 800px;
   height: 600px;
-  margin: 80px auto;
+  margin: 30px auto;
 }
 
 .page {
@@ -187,7 +187,7 @@ div.about {
     position: fixed;
 
     top: 0;
-    left: 220px;
+    left: 0;
     right: 0;
     bottom: 0;
 
@@ -202,6 +202,9 @@ div.about {
 #flipbook {
   position: relative;
   z-index: 1;
+}
+body.flipbook-open {
+  overflow: hidden;
 }
 
 /* UI ABOVE flipbook */
@@ -243,11 +246,12 @@ div.about {
   transform: translateY(-50%);
 }
 
-/* CLOSE (relative to flipbook, not screen) */
+/* CLOSE */
 .close-btn {
   top: 10px;
   right: 10px;
 }
+
 /* =========================
    ABOUT IMAGE PANEL
 ========================= */
@@ -262,9 +266,7 @@ div.about {
   overflow: auto;
 }
 
-body.flipbook-open {
-  overflow: hidden;
-}
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -286,3 +288,4 @@ body.flipbook-open {
     display: none;
   }
 }
+
