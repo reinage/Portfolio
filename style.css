@@ -311,7 +311,6 @@ shelf look pretty?
 overflow: visible;
   box-sizing: border-box;
   container-type: inline-size;
-  transform-style: preserve-3d;  /*parallax*/
 }
 
 .shelf-wood {
@@ -363,7 +362,6 @@ margin-bottom: -6px;
 
   transition: transform 0.3s ease, gap 0.3s ease;
 	
-  will-change: transform; /*parallax*/
 }
 
 .zine {
