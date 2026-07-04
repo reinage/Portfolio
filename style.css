@@ -306,6 +306,7 @@ shelf look pretty?
 }
 .wood-shelf {
   width: min(1000px, 90vw);
+   margin-right:200%;
   display: flex;
   flex-direction: column;
   align-items: center;
