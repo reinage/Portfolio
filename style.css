@@ -495,7 +495,8 @@ margin-bottom: -9px;
   max-width: 120px;
   }
 
-
+.body
+ {overflow:hidden;}
 
   .kofi-wiggle {
     display: none;
