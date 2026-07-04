@@ -370,14 +370,7 @@ shelf look pretty?
 
   height: 20px;
 
-background:
-  repeating-linear-gradient(
-    90deg,
-    rgba(0,0,0,0.05),
-    rgba(0,0,0,0.05) 2px,
-    transparent 2px,
-    transparent 6px
-  ),
+  background-image: url("https://www.openfootage.net/wp-content/uploads/2021/03/oakwood_texture_8k0004-1024x683.jpg");
   linear-gradient(135deg, #6b4b2a, #3f2a17);
 
   z-index: 3;
