@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL BASE STYLES
+   GLOBAL BASE STYLES 
 ========================= */
  
 body {
@@ -320,7 +320,7 @@ shelf look pretty?
   bottom: 0;
 	
   z-index: 0;
-    height: 40px;
+    height: 60px;
 
     background-image: url("https://www.openfootage.net/wp-content/uploads/2021/03/oakwood_texture_8k0004-1024x683.jpg");
    	background-color: #0004; 
