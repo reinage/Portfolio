@@ -101,7 +101,15 @@ function hideUI() {
 function registerUIActivity() {
     showUI();
 }
+// parallax
+window.addEventListener("scroll", () => {
+  const shelf = document.querySelector(".shelf-books");
+  const y = window.scrollY;
 
+  if (shelf) {
+    shelf.style.transform = `translateY(${y * -0.03}px)`;
+  }
+});
 // events
 document.addEventListener("mousemove", registerUIActivity);
 document.addEventListener("mousedown", registerUIActivity);
