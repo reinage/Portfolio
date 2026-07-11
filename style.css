@@ -346,7 +346,8 @@ overflow: visible;
 
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+
+  justify-content: space-evenly;
 margin-bottom: -9px;
 
 
