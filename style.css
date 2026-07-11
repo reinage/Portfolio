@@ -388,6 +388,17 @@ margin-bottom: -9px;
 .zine:hover {
   transform: translateY(-8px) scale(1.05);
 }
+
+.zine::before { 
+	bottom: 100%;
+background-color: white;
+	content: '';
+	height: 15%;
+width:100%;
+	position: absolute;
+clip-path: polygon(82% 54%, 94% 100%, 3% 100%);
+}
+
 .shelf-lip {
   position: absolute;
   left: 0;
