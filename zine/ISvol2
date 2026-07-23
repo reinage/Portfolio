@@ -1,1 +1,61 @@
-      <div class="page" style="background-image:url('tangled/Tangled (1)')"></div>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nebula Fine Art</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="js/jquery.min.1.7.js"></script>
+  <script src="js/turn.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+
+    <div class="content nosidebarpls">
+  <!-- FLIPBOOK STAGE (IMPORTANT WRAPPER) -->
+  <div class="flipbook-stage">
+
+    <!-- UI OVERLAY -->
+    <div class="book-ui">
+
+      <button class="nav-btn prev"
+        onclick="$('#flipbook').turn('previous')">
+        ‹
+      </button>
+
+      <button class="nav-btn next"
+        onclick="$('#flipbook').turn('next')">
+        ›
+      </button>
+
+      <button class="close-btn"
+        onclick="goBack()">
+        ✕
+      </button>
+
+    </div> <!-- UI -->
+    <!-- FLIPBOOK -->
+    <div id="flipbook">
+ 
+      
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (1)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (2)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (3)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (4)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (5)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (6)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (7)')"></div>
+      <div class="page" style="background-image:url('WebISvol2/ISVol2 (8)')"></div>
+
+    </div>  <!-- flipbook -->
+
+
+</div> <!-- flipbook stage -->
+</div> <!-- content-->
+
+</body>
+</html>
