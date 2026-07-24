@@ -23,12 +23,14 @@ function initFlipbook() {
 
     if (!$book.length) return;
 
-    $book.turn({
-        display: displayMode,
-        autoCenter: true,
-        elevation: 20,
-        gradients: true
-    });
+$book.turn({
+    width: 400,
+    height: 600,
+    display: displayMode,
+    autoCenter: true,
+    elevation: 20,
+    gradients: true
+});
 
     document.body.classList.add("flipbook-open");
 showUI();
