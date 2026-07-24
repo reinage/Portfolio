@@ -45,22 +45,30 @@ function resize() {
 
     if (!$book.data("turn")) return;
 
-const sidebarWidth = window.innerWidth > 700 ? 220 : 0;
+const sidebarWidth = 0;
 const stagePadding = 40;
 
-let w = Math.min(
-    window.innerWidth - sidebarWidth - stagePadding,
-    maxWidth
-) * 0.9;
-    let h = window.innerHeight * 0.85;
+let w = window.innerWidth - stagePadding;
 
+const vh = window.visualViewport
+    ? window.visualViewport.height
+    : window.innerHeight;
+
+let h = vh * 0.85;
     const ratio = 800 / 600;
 
     if (w / h > ratio) w = h * ratio;
     else h = w / ratio;
 
     $book.turn("size", w, h);
+const isMobile = window.innerWidth < 700;
+const isLandscape = window.innerWidth > window.innerHeight;
 
+$book.turn(
+    "display",
+    (isMobile && isLandscape) ? "double"
+    : (isMobile ? "single" : "double")
+);
 }
 
 // ----------------------
