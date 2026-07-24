@@ -55,7 +55,7 @@ const vh = window.visualViewport
     : window.innerHeight;
 
 let h = vh * 0.85;
-    const ratio = 800 / 600;
+const ratio = 5.5 / 8.5;
 
     if (w / h > ratio) w = h * ratio;
     else h = w / ratio;
