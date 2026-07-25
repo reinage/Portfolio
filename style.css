@@ -218,12 +218,10 @@ rotate(-1deg);
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-height: 0;
-height:100vh;
+min-height:100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
   box-sizing: border-box;
 }
 /* Flipbook layer */
