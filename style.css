@@ -215,6 +215,14 @@ rotate(-1deg);
 ========================= */
 
 .flipbook-stage {
+	    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+	/*old
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -222,7 +230,7 @@ min-height:100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  box-sizing: border-box;
+  box-sizing: border-box;*/
 }
 /* Flipbook layer */
 #flipbook {
