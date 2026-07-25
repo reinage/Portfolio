@@ -23,21 +23,40 @@ function initFlipbook() {
 
     if (!$book.length) return;
 
-$book.turn({
-    width: 400,
-    height: 600,
-    display: displayMode,
-    autoCenter: true,
-    elevation: 20,
-    gradients: true
-});
+
+    // calculate size BEFORE turn.js creates wrappers
+    const stagePadding = 40;
+
+    let h = window.visualViewport
+        ? window.visualViewport.height * 0.85
+        : window.innerHeight * 0.85;
+
+    const ratio = 5.5 / 8.5;
+
+    let w = h * ratio;
+
+    // if too wide, fit to width instead
+    if (w * (displayMode === "double" ? 2 : 1) > window.innerWidth - stagePadding) {
+        w = (window.innerWidth - stagePadding) / (displayMode === "double" ? 2 : 1);
+        h = w / ratio;
+    }
+
+
+    $book.turn({
+        width: w * (displayMode === "double" ? 2 : 1),
+        height: h,
+        display: displayMode,
+        autoCenter: true,
+        elevation: 20,
+        gradients: true
+    });
+
 
     document.body.classList.add("flipbook-open");
-showUI();
-setTimeout(hideUI, UI_HIDE_DELAY);
-    resize();
-}
 
+    showUI();
+    setTimeout(hideUI, UI_HIDE_DELAY);
+}
 // ----------------------
 // RESIZE
 // ----------------------
@@ -66,11 +85,7 @@ const ratio = 5.5 / 8.5;
 const isMobile = window.innerWidth < 700;
 const isLandscape = window.innerWidth > window.innerHeight;
 
-$book.turn(
-    "display",
-    (isMobile && isLandscape) ? "double"
-    : (isMobile ? "single" : "double")
-);
+$book.turn("size", w, h);
 }
 
 // ----------------------
