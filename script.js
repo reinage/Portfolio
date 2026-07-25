@@ -8,7 +8,7 @@ function goBack() {
 }
 
 // ----------------------
-// INIT FLIPBOOK
+// INIT FLIPBOOK 
 // ----------------------
 function initFlipbook() {
 
