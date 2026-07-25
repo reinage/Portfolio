@@ -200,7 +200,7 @@ rotate(-1deg);
 #flipbook {
   width: 800px;
   height: 600px;
-  margin: 10px auto;
+  margin: 0px auto !important;
 }
 
 .page {
