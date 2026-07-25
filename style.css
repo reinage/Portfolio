@@ -198,8 +198,8 @@ rotate(-1deg);
 ========================= */
 
 #flipbook {
-  width: auto;
-  height: auto;
+  width: 800px;
+  height: 600px;
   margin: 10px auto;
 }
 
@@ -222,7 +222,7 @@ rotate(-1deg);
 height:100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   box-sizing: border-box;
 }
