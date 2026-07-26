@@ -435,7 +435,7 @@ clip-path: polygon(82% 54%, 82% 100%, 3% 100%);
     position: relative;
     display: inline-block;
     max-width: 70%;
-	max-height:80vh;
+	max-height:80%;
     margin: 0 auto;
 }
 
