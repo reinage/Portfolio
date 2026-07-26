@@ -516,7 +516,7 @@ clip-path: polygon(82% 54%, 82% 100%, 3% 100%);
   }
 
   .shelf-books {
-  justify-content: center;
+justify-content: space-evenly;
   align-items: flex-end;
 
   gap: clamp(6px, 2vw, 14px);
