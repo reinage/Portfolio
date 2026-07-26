@@ -433,14 +433,14 @@ clip-path: polygon(82% 54%, 82% 100%, 3% 100%);
 
 .handsfinal {
     position: relative;
-    display: block;
-    width: fit-content;
+    display: inline-block;
+    width: 70%;
     margin: 0 auto;
 }
 
 	.handsfinal img {
     display: block;
-    width: 75%;
+    width: 100%;
 }
 	.hands-hover {
     position: absolute;
