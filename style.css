@@ -441,13 +441,11 @@ clip-path: polygon(82% 54%, 82% 100%, 3% 100%);
 	.handsfinal img {
     display: block;
     width: 75%;
-	transition: opacity 0.25s ease;
 }
 	.hands-hover {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 0.25s ease;
 }
 
 .handsfinal:hover .hands-hover {
