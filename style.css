@@ -434,8 +434,8 @@ clip-path: polygon(82% 54%, 82% 100%, 3% 100%);
 .handsfinal {
     position: relative;
     display: inline-block;
-    width: 70%;
-	max-height:80%;
+    max-width: 70%;
+	max-height:80vh;
     margin: 0 auto;
 }
 
