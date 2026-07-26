@@ -511,6 +511,30 @@ clip-path: polygon(82% 54%, 94% 100%, 3% 100%);
   max-width: 120px;
   }
 
+.handsfinal {
+    position: relative;
+    display: inline-block;
+}
+
+	.handsfinal img {
+    display: block;
+    width: 75%;
+}
+	.hands-hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.handsfinal:hover .hands-hover {
+    opacity: 1;
+}
+
+.handsfinal:hover .hands {
+    opacity: 0;
+}
+	
 .body
  {overflow:hidden;}
 
